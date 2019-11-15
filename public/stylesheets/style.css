@@ -1,0 +1,29 @@
+body {
+  padding: 30px 0px 50px 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.title{
+  width:auto;
+  height:100px;
+  color:whitesmoke;
+  background-color: black;
+}
+.t{
+  padding:35px 0px 0px 15px;
+}
+.descript{
+  padding:0px 0px 0px 10px;
+}
+.content{
+  width:1000px;
+}
+.box {
+  display: inline-block;
+  width: 300px;
+  height: auto;
+  text-align:center;
+}
