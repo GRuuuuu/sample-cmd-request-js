@@ -8,28 +8,34 @@
 
 <div class="content">
     <div class="box">
-        <h3>Example Command: "ls -al |grep app" </h3>
+        <h3>Ex) cmd1: "ls -al |grep app" </h3>
         <form id='target' action='cmd'>
                 <input type='submit' name="cmd" value='c1'>
         </form>
-        <textarea placeholder='result'  name="description " id="t1" cols="30" rows="10"><%= data1%></textarea>
-        <p><button id="req" onclick="download(document,'t1')">DOWNLOAD</button></p>
+        <form id='target' action='cmd/download'>
+            <textarea placeholder='result'  name="description" class="t1" cols="30" rows="10"><%=data1%></textarea>
+            <input type='submit' name="cmd" value="DOWNLOAD">
+        </form>
     </div>
     <div class="box">
-        <h3> --- </h3>
+        <h3> Ex) cmd2: "pwd" </h3>
         <form id='target' action='cmd'>
                 <input type='submit' name="cmd" value='c2'>
         </form>
-        <textarea placeholder='result'  name="description " id="t1" cols="30" rows="10"><%= data2%></textarea>
-        <p><button id="req" onclick="download(document,'t2')">DOWNLOAD</button></p>
+        <form id='target' action='cmd/download'>
+            <textarea placeholder='result'  name="description" class="t1" cols="30" rows="10"><%=data2%></textarea>
+            <input type='submit' name="cmd" value="DOWNLOAD">
+        </form>
     </div>
     <div class="box">
         <h3> --- </h3>
         <form id='target' action='cmd'>
                 <input type='submit' name="cmd" value='c3'>
         </form>
-        <textarea placeholder='result'  name="description " id="t1" cols="30" rows="10"><%= data3%></textarea>
-        <p><button id="req" onclick="download(document,'t3')">DOWNLOAD</button></p>
+        <form id='target' action='cmd/download'>
+            <textarea placeholder='result'  name="description" class="t1" cols="30" rows="10"><%=data3%></textarea>
+            <input type='submit' name="cmd" value="DOWNLOAD">
+        </form>
     </div>
 </div>
 
