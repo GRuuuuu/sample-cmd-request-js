@@ -8,11 +8,11 @@
 
 <div class="content">
     <div class="box">
-        <h3>Example Command: pwd </h3>
+        <h3>Example Command: "ls -al |grep app" </h3>
         <form id='target' action='cmd'>
                 <input type='submit' name="cmd" value='c1'>
         </form>
-        <textarea placeholder='result'  name="description " id="t1" cols="30" rows="10"><%= data%></textarea>
+        <textarea placeholder='result'  name="description " id="t1" cols="30" rows="10"><%= data1%></textarea>
         <p><button id="req" onclick="download(document,'t1')">DOWNLOAD</button></p>
     </div>
     <div class="box">
@@ -20,7 +20,7 @@
         <form id='target' action='cmd'>
                 <input type='submit' name="cmd" value='c2'>
         </form>
-        <textarea placeholder="result" name="description " id="t2" cols="30" rows="10"></textarea>
+        <textarea placeholder='result'  name="description " id="t1" cols="30" rows="10"><%= data2%></textarea>
         <p><button id="req" onclick="download(document,'t2')">DOWNLOAD</button></p>
     </div>
     <div class="box">
@@ -28,7 +28,7 @@
         <form id='target' action='cmd'>
                 <input type='submit' name="cmd" value='c3'>
         </form>
-        <textarea placeholder="result" name="description " id="t3" cols="30" rows="10"></textarea>
+        <textarea placeholder='result'  name="description " id="t1" cols="30" rows="10"><%= data3%></textarea>
         <p><button id="req" onclick="download(document,'t3')">DOWNLOAD</button></p>
     </div>
 </div>

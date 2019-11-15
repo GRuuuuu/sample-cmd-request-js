@@ -4,46 +4,37 @@ var exec = require("child_process").exec;
 var fs =require("fs");
 
 //command to execute
-var c1='df -h';
-var c2='';
+//**Keep in mind what OS is used**
+var c1='ls -al |grep app';
+var c2='pwd';
 var c3='';
 
 router.get('/', function(req, res, next) {
     console.log(req.query.cmd);
 
-    var command;
+    var command,target;
     switch (req.query.cmd){
         case 'c1':
-            command=c1;break;
+            command=c1,target='data1';break;
         case 'c2':
-            command=c2;break;
+            command=c2,target='data2';break;
         case 'c3':
-            command=c3;break;    
-    }
-    var execoption={ 
-        encoding: 'euckr',
-        timeout: 0,
-        maxBuffer: 200*1024,
-        killSignal: 'SIGTERM',
-        cwd: null,
-        env: null 
+            command=c3,target='data3';break;    
     }
 
-    exec(command, execoption,function (err, stdout, stderr) {
+    exec(command,function (err, stdout, stderr) {
         //Print stdout/stderr to console
         console.log("stdout : "+stdout);
         console.log("stderr : "+stderr);
-        var result;
-        result=stdout;
+        var out;
+        out=stdout;
         if (stderr!="")
-            result=stderr;
-
-        fs.writeFile('text.txt',"\uFEFF"+result,'utf8',function(error,data){
-            console.log(data);
-        });
-            
-        //Simple response to user whenever localhost:3003 is accessed
-        res.render('index', { title: 'cmd Request', data: result });
+            out=stderr;
+        
+        var result={};
+        result[target]=out;
+        res.json(result);
+        
   });
 });
 
