@@ -8,18 +8,25 @@ var fs =require("fs");
 var c1='ls -al |grep app';
 var c2='pwd';
 var c3='';
+var c4='';
+var c5='';
 
 router.get('/', function(req, res, next) {
     console.log(req.query.cmd);
 
-    var command,target,oth1,oth2;
+    var command,target,oth1,oth2,oth3,oth4;
+    
     switch (req.query.cmd){
         case 'c1':
-            command=c1,target='data1',oth1='data2',oth2='data3';break;
+            command=c1,target='data1',oth1='data2',oth2='data3',oth3='data4',oth4='data5';break;
         case 'c2':
-            command=c2,target='data2',oth1='data1',oth2='data3';break;
+            command=c2,target='data2',oth1='data1',oth2='data3',oth3='data4',oth4='data5';break;
         case 'c3':
-            command=c3,target='data3',oth1='data1',oth2='data2';break;    
+            command=c3,target='data3',oth1='data1',oth2='data2',oth3='data4',oth4='data5';break;    
+        case 'c4':
+            command=c4,target='data4',oth1='data1',oth2='data2',oth3='data3',oth4='data5';break;  
+        case 'c5':
+            command=c5,target='data5',oth1='data1',oth2='data2',oth3='data3',oth4='data4';break;  
     }
 
     //Error handling
@@ -29,6 +36,8 @@ router.get('/', function(req, res, next) {
         result[target]="[ERR] please set command";
         result[oth1]='';
         result[oth2]='';
+        result[oth3]='';
+        result[oth4]='';
         res.render('index', result);
     }
 
@@ -50,6 +59,8 @@ router.get('/', function(req, res, next) {
         result[target]=out;
         result[oth1]='';
         result[oth2]='';
+        result[oth3]='';
+        result[oth4]='';
         res.render('index', result);
   });
 });

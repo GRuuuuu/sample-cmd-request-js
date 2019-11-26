@@ -23,6 +23,7 @@ a {
 }
 .content{
   width:1000px;
+  display:block;
 }
 .box {
   display: inline-block;
@@ -30,3 +31,8 @@ a {
   height: auto;
   text-align:center;
 }
+.download{
+  width: 700px;
+  padding : 0px 0px 0px 730px;
+  margin : 0px;
+} 
